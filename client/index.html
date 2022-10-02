@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./scripts/server-errors.js"></script>
+    <script src="./scripts/show-server-errors.js"></script>
+    <script src="./scripts/index.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form" action="">
+      <h2>Create new TravelDestinations</h2>
+      <label for="title"></label>
+      <input type="text" id="title" placeholder="Title" />
+
+      <label for="country"></label>
+      <input type="text" id="country" placeholder="Country" />
+
+      <label for="place"></label>
+      <input type="text" id="place" placeholder="Location" />
+
+      <label for="date-from"></label>
+      <input type="date" id="date-from" placeholder="dd-mm-yyyy" />
+
+      <label for="date-to"></label>
+      <input type="date" id="date-to" placeholder="dd-mm-yyyy" />
+
+      <label for="description"></label>
+      <input type="text" id="description" placeholder="Description" />
+
+      <input id="submit" type="submit" />
+    </form>
+
+    <ul class="destinations">
+      <div id="spinner">
+        <div></div>
+        <div></div>
+      </div>
+    </ul>
+  </body>
+</html>

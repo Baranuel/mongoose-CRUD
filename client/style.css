@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter";   
+    background-color: rgb(41, 39, 39);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#form {
+    background-color:rgb(32, 31, 31);
+    color: white;
+    border: 2px solid rgb(247, 86, 86);
+    border-radius: 10px;
+    margin: 2rem;
+    padding: 3rem;
+    display: flex;
+    min-width: 600px;   
+    width: 30%;
+    flex-direction: column;
+    transition: all 300ms ease;
+}
+
+#form h2 {
+    margin-bottom: 1.5rem;
+}
+#form  input {
+    padding: 1rem;
+    margin: 0.5rem;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+#form > input:focus {
+    outline: 1px solid rgb(247, 86, 86) ;
+}
+
+input {
+    background-color:rgb(45, 44, 44) ;
+}
+input[type="date"] {
+    color: white;
+    width: 40%;
+}
+
+input[type="submit"]{
+    background-color: rgb(247, 86, 86);
+    cursor: pointer;
+}
+
+.destinations {
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 80vh;
+    background-color:rgb(32, 31, 31);
+    outline: 1px solid rgb(247, 86, 86) ;
+    border-radius: 10px;
+}
+
+.destinations::-webkit-scrollbar {
+    width: 10px;
+
+}
+.destinations::-webkit-scrollbar-track {
+    background: rgb(45, 44, 44);
+  }
+
+  .destinations::-webkit-scrollbar-thumb {
+    background:rgb(247, 86, 86) ;
+  }
+
+.destinations li {
+    list-style-type: none;
+    padding: 1.75rem;
+    border-radius: 10px;
+    background-color:rgb(36, 35, 35);
+    outline: 1px solid rgb(247, 86, 86);   
+}
+.destinations  a {
+    margin: 1rem;
+    text-decoration: none;
+    color: white;
+    width: 90%;
+
+}
+
+.destinations li:hover {
+    background-color:rgb(45, 44, 44) ;
+}
+
+.destinations li * {
+    margin: 1rem;
+}
+
+.destination li  {
+    list-style-type: none;
+    padding: 1.75rem;
+    border-radius: 10px;
+    background-color:rgb(36, 35, 35);
+    color: white;
+    outline: 1px solid rgb(247, 86, 86);   
+
+}
+
+.destination li * {
+    margin: 1rem;
+}
+
+.error-sign {
+    border-radius: 10px;
+    display: block;
+    border: 1px solid rgb(251, 36, 36);
+    background-color: rgb(28, 28, 28);
+    width: 100%;
+    color: rgb(254, 4, 4);
+    padding: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    animation: appear 200ms ease-in-out forwards;
+}
+.error-sign h4 {
+    margin-right: 0.5rem;
+}
+
+.error-div {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    width: 100%;
+}
+.error-div p{
+    font-size: 0.875rem;
+}
+.error-div h4 {
+    font-size: 0.9rem;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.nav {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.nav li {
+    list-style-type: none;
+    font-size: 2.6rem;
+    color: rgb(247, 86, 86);
+    padding: 1rem 1.5rem;
+    border: 1px solid rgb(247, 86, 86);
+    border-radius: 10px;
+}
+
+/* stolen spinner don't hate */
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transition: opacity 500ms ease;
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    4.9% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    5% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
+  
+
+@keyframes appear {
+    0% {opacity: 0; transform: scale(0);}
+    
+    100% {opacity: 1; transform: scale(1);}
+}
