@@ -7,8 +7,10 @@ import {
   getDestinations,
   createDestination,
   updateDestination,
-  getDestinationById,
+  getDestinationById
 } from "../controllers/DestinationController.js";
+
+import {createUser, checkUser} from "../controllers/UsersController.js";
 
 const uri =
   "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.ohvc7rg.mongodb.net/mongoose_travel_destinations";
@@ -27,6 +29,9 @@ app.post("/", createDestination);
 
 app.put("/destination/:id", updateDestination);
 app.get("/destination/:id", getDestinationById);
+
+app.post("/auth/signup", createUser);
+app.get("/auth/login", checkUser);
 
 app.listen(port, () => {
   console.log("running");
