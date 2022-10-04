@@ -10,6 +10,8 @@ import {
   getDestinationById,
 } from "../controllers/DestinationController.js";
 
+import { createUser, getUser } from "../controllers/UsersController.js";
+
 const uri =
   "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.ohvc7rg.mongodb.net/mongoose_travel_destinations";
 
@@ -24,6 +26,9 @@ mongoose.connect(uri);
 app.get("/", getDestinations);
 
 app.post("/", createDestination);
+
+app.post("/auth/signup", createUser);
+app.get("/auth/login", getUser);
 
 app.put("/destination/:id", updateDestination);
 app.get("/destination/:id", getDestinationById);
