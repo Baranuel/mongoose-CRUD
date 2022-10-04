@@ -1,4 +1,4 @@
--import mongoose, { get } from "mongoose";
+import mongoose, { get } from "mongoose";
 import Destination from "../models/destination-scheme.js";
 
 import express from "express";
