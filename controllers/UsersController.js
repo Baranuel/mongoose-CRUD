@@ -19,8 +19,8 @@ export const getUser = async (req, res) => {
   try {
     const user = await User.findOne({
       userEmail: payload.userEmail,
-      userPassword: payload.userPassword,
     });
+
     const token = jwt.sign({ _id: user.id }, "VladIsGay");
 
     res.send(token);
