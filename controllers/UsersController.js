@@ -21,7 +21,7 @@ export const getUser = async (req, res) => {
       userEmail: payload.userEmail,
       userPassword: payload.userPassword,
     });
-    const token = jwt.sign({ _id: user.id }, "VladIsGay");
+    const token = jwt.sign({ _id: user.id }, "SamuelIsGay");
 
     res.send(token);
     res.send(user);
