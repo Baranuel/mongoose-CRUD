@@ -33,6 +33,7 @@ export const getUser = async (req, res) => {
       userExists.userPassword
     );
 
+
     if (!isValidPassword) {
       return res.json("error, The passwords do not match");
     }
