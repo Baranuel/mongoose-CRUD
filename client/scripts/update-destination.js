@@ -10,6 +10,12 @@ const dateTo = document.querySelector("#date-to");
 const description = document.querySelector("#description");
 const submit = document.querySelector("#submit");
 const spinner = document.getElementById("spinner");
+const loginButton = document.querySelector("#loginButton");
+const loginForm = document.querySelector("#someform");
+const deleteButton = document.querySelector(".delete-button");
+
+const userEmail = document.querySelector("#username");
+const userPassword = document.querySelector("#password");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -50,7 +56,7 @@ const putData = async (data) => {
 
 const getData = async () => {
   const request = await fetch(
-    `http://localhost:3000/destination/${splitHref[1]}`
+    `http://localhost:5500/destination/${splitHref[1]}`
   );
   const response = await request.json();
 
@@ -81,3 +87,49 @@ const showData = () => {
 };
 
 getData();
+
+const login = async (user) => {
+  console.log(localStorage.getItem("token"));
+
+  const request = await fetch("http://localhost:5500/auth/login", {
+    method: "POST",
+    headers: { "Content-type": "application/json" },
+    body: JSON.stringify(user),
+  });
+
+  const response = await request.json();
+  const token = await response.token;
+  console.log(token);
+  localStorage.setItem("token", token);
+  console.log(response);
+};
+
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const user = {
+    userEmail: userEmail.value,
+    userPassword: userPassword.value,
+  };
+  document.querySelector("#isLogged").textContent = "Logged in";
+  login(user);
+});
+
+deleteButton.addEventListener("click", async () => {
+  const token = await localStorage.getItem("token");
+  const request = await fetch(
+    `http://localhost:5500/destination/delete/${splitHref[1]}`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: token,
+      },
+    }
+  );
+  const response = await request.json();
+  if (response.message) {
+    return alert(response.message + " please log in");
+  }
+  alert(response + " click te home button to see the change");
+});

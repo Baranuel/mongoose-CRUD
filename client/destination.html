@@ -45,6 +45,30 @@
       <input id="submit" type="submit" />
     </form>
 
-    <ul class="destination"></ul>
+    <ul class="destination">
+      <form id="someform">
+        <p>Username:</p>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          id="username"
+          value="zeynosKebab@gmail.com"
+          required
+        />
+        <p>Password:</p>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value="12344"
+          id="password"
+          required
+        />
+        <input type="submit" value="Login" id="loginButton" />
+      </form>
+      <button class="delete-button">Delete</button>
+      <h1 id="isLogged"></h1>
+    </ul>
   </body>
 </html>
