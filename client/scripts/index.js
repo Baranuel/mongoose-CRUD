@@ -25,20 +25,11 @@ const populateData = () => {
 };
 
 let destinations;
-const showSpinner = () => {
-  spinner.classList.add("lds-ripple");
-};
-
-const HideSpinner = () => {
-  spinner.classList.remove("lds-ripple");
-};
 
 const getData = async () => {
   try {
-    showSpinner();
-    const data = await fetch("http://localhost:3000");
+    const data = await fetch("http://localhost:5500");
     const response = await data.json();
-    HideSpinner();
     destinations = response;
 
     populateData();
@@ -50,7 +41,7 @@ const getData = async () => {
 getData();
 
 const postData = async (payload) => {
-  const request = await fetch("http://localhost:3000", {
+  const request = await fetch("http://localhost:5500", {
     method: "POST",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(payload),

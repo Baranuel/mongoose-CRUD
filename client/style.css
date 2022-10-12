@@ -169,6 +169,20 @@ input[type="submit"]{
 }
 
 /* stolen spinner don't hate */
+#someform {
+    color: white;
+    display: flex;
+    margin: 1rem;
+}
+#someform p {
+    margin: 0.5rem;
+}
+#someform input {
+    color: white;
+}
+#isLogged {
+    color:rgb(109, 238, 69)
+}
 
 .lds-ripple {
     display: inline-block;

@@ -62,3 +62,16 @@ export const getDestinationById = async (req, res) => {
     console.log(err)
   }
 }
+
+export const deleteDestination = async (req, res) => {
+  const params = req.params;
+  try {
+    await Destination.findOneAndDelete({
+      _id: params.id,
+    });
+    res.json("deleted destination");
+  } catch (err) {
+    res.json(err);
+  }
+};
+
